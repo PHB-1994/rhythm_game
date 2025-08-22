@@ -15,6 +15,8 @@ $(function () {
     k: 3,
   };
 
+  $("#startBtn").click(startGame);
+
   /**
    * 게임 시작 함수
    * - 아이템 생성과 타이머를 시작한다.
@@ -168,8 +170,8 @@ $(function () {
       }
     });
     // 성공/실패 관계없이 항상 키 눌림 설정에 대해서 css 적으로 보여주기
+    // $(".key").eq(lane) 현재 눌림을 당하고 있는 키에 passed 클래스 추가
     $(".key").eq(lane).addClass("passed");
     setTimeout(() => $(".key").eq(lane).removeClass("passed"), 100);
   });
-  startGame();
 });
